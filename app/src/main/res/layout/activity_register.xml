@@ -32,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".2" />
+        app:layout_constraintVertical_bias=".15" />
 
     <TextView
         android:id="@+id/titleregister"
@@ -49,122 +49,209 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/wellcome" />
 
-
-    <EditText
-        android:id="@+id/fullname"
+    <TableLayout
+        android:id="@+id/tb1"
         android:layout_width="0dp"
+        android:paddingTop="10dp"
+        android:stretchColumns="1"
+        android:shrinkColumns="0"
         android:layout_height="wrap_content"
-        android:backgroundTintMode="screen"
-        android:fontFamily="@font/comfortaa"
-        android:hint="Họ tên"
-        android:textColorHint="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleregister"
-        app:layout_constraintWidth_percent=".8" />
+        app:layout_constraintWidth_percent="0.95">
+        <TableRow>
+            <TextView
+                android:id="@+id/fullname1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:textColor="@color/black"
+                android:text="Họ Tên"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/fullname"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:hint="Nhập Họ tên"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_column="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleregister"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/email1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:textColor="@color/black"
+                android:text="Email"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:hint="Nhập Email"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_column="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phone" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/phone1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:textColor="@color/black"
+                android:text="Điện thoại"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:hint="Nhập Số điện thoại"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_column="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fullname" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/address1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:textColor="@color/black"
+                android:text="Địa chỉ"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:hint="Nhập địa chỉ"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_column="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/DateGroup" />
+        </TableRow>
+    </TableLayout>
+    <TableLayout
+        android:id="@+id/tb2"
+        app:layout_constraintTop_toBottomOf="@+id/tb1"
+        android:stretchColumns="1"
+        android:shrinkColumns="0"
+        android:layout_width="0dp"
+        android:paddingRight="100sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.95">
+        <TableRow>
+            <TextView
+                android:id="@+id/Sex1"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:layout_weight="1"
+                android:text="Giới tính"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/email"
+            <RadioButton
+                android:id="@+id/rbNam"
+                android:fontFamily="@font/comfortaa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/Sex1"
+                android:padding="10dp"
+                android:text="Nam"
+                android:layout_column="2"
+                android:textColorHint="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/rbNu"
+                android:fontFamily="@font/comfortaa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Nữ"
+                app:layout_constraintTop_toBottomOf="@+id/Sex1"
+                android:layout_column="1"
+                android:textColorHint="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+    <TableLayout
+        android:id="@+id/tb3"
+        app:layout_constraintTop_toBottomOf="@+id/tb2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:stretchColumns="1"
+        android:shrinkColumns="0"
+        android:paddingTop="10dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTintMode="screen"
-        android:fontFamily="@font/comfortaa"
-        android:hint="Email"
-        android:textColorHint="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone"
-        app:layout_constraintWidth_percent=".8" />
+        app:layout_constraintWidth_percent="0.95">
+        <TableRow>
+            <TextView
+                android:id="@+id/bob"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:hint="Ngày sinh"
+                android:textColorHint="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingLeft="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+            <EditText
+                android:id="@+id/textDate"
+                android:hint=""
+                android:textSize="18sp"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+            <Button
+                android:id="@+id/setDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/bob"
+                android:layout_gravity="end"
+                android:layout_column="2"
+                style="@style/ToggleButtonIcon"
+                android:drawableRight="@drawable/ic_round_calendar_today_24"
+                app:layout_constraintTop_toBottomOf="@+id/bob"/>
+        </TableRow>
+    </TableLayout>
 
-    <EditText
-        android:id="@+id/phone"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTintMode="screen"
-        android:fontFamily="@font/comfortaa"
-        android:hint="Số điện thoại"
-        android:textColorHint="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fullname"
-        app:layout_constraintWidth_percent=".8" />
-
-    <EditText
-        android:id="@+id/address"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTintMode="screen"
-        android:fontFamily="@font/comfortaa"
-        android:hint="Địa chỉ"
-        android:textColorHint="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bob"
-        app:layout_constraintWidth_percent=".8" />
-
-    <RadioGroup
-        android:id="@+id/radioGroupSex"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:fontFamily="@font/comfortaa"
-            android:text="Giới tính"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <RadioButton
-            android:id="@+id/rbNam"
-            android:fontFamily="@font/comfortaa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="Nam"
-            android:textColorHint="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <RadioButton
-            android:id="@+id/rbNu"
-            android:fontFamily="@font/comfortaa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="Nữ"
-            android:textColorHint="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </RadioGroup>
-
-    <AutoCompleteTextView
-        android:id="@+id/bob"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTintMode="screen"
-        android:fontFamily="@font/comfortaa"
-        android:hint="Ngày sinh"
-        android:textColorHint="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroupSex"
-        app:layout_constraintWidth_percent=".8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
