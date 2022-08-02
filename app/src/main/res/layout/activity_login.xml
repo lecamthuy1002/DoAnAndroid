@@ -61,7 +61,7 @@
         android:paddingLeft="30dp"
         android:textColor="@color/black"
         android:layout_marginTop="20sp"
-        android:background="@drawable/botron"
+        android:background="@drawable/botron_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titlelogin"
@@ -80,7 +80,7 @@
         android:paddingLeft="30dp"
         android:textColor="@color/black"
         android:layout_marginTop="20sp"
-        android:background="@drawable/botron"
+        android:background="@drawable/botron_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailLogin"
@@ -101,5 +101,18 @@
         app:layout_constraintTop_toBottomOf="@+id/passLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <ImageButton
+        android:id="@+id/GoogleLogin"
+        android:src="@mipmap/ic_launcher_logo_google_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        android:background="@drawable/botron_button"
+        android:layout_marginTop="30sp"
+        android:layout_marginLeft="180sp"
+        android:scaleType="centerCrop"
+        android:layout_width="70dp"
+        android:layout_height="70dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
