@@ -32,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".15" />
+        app:layout_constraintVertical_bias=".1" />
 
     <TextView
         android:id="@+id/titleregister"
@@ -250,6 +250,66 @@
                 style="@style/ToggleButtonIcon"
                 android:drawableRight="@drawable/ic_round_calendar_today_24"
                 app:layout_constraintTop_toBottomOf="@+id/bob"/>
+        </TableRow>
+    </TableLayout>
+    <TableLayout
+        android:id="@+id/tb4"
+        android:layout_width="0dp"
+        android:paddingTop="10dp"
+        android:stretchColumns="1"
+        android:shrinkColumns="0"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb3"
+        app:layout_constraintWidth_percent="0.95">
+        <TableRow>
+            <TextView
+                android:id="@+id/password1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:textColor="@color/black"
+                android:text="Mật khẩu"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:hint="Nhập mật khẩu"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_column="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleregister"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/confirm_pass1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:textColor="@color/black"
+                android:text="Xác nhận"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/confirm_pass"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:hint="Nhập lại mật khẩu"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_column="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phone" />
         </TableRow>
     </TableLayout>
 
