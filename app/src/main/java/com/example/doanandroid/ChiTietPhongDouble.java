@@ -28,7 +28,7 @@ public class ChiTietPhongDouble extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chitietpb);
+        setContentView(R.layout.chitietpd);
 
 
         down_arrow = findViewById(R.id.down_arrow);
