@@ -60,7 +60,6 @@ public class ChiTietPhongDouble extends AppCompatActivity {
 
 
         down_arrow.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ChiTietPhongDouble.this, PhongDouble.class);
