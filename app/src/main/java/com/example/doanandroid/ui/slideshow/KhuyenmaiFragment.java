@@ -14,7 +14,7 @@ import com.example.doanandroid.R;
 
 
 public class KhuyenmaiFragment extends Fragment {
-
+//text
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
