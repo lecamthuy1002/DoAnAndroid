@@ -31,13 +31,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".3" />
+        app:layout_constraintVertical_bias=".2" />
 
     <TextView
         android:id="@+id/titlelogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="@font/comfortaa"
         android:text="Đăng nhập"
         android:textAlignment="center"
@@ -48,69 +48,118 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/wellcome" />
 
-    <EditText
-        android:id="@+id/emailLogin"
+    <LinearLayout
+        android:id="@+id/lineemail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/comfortaa"
-        android:hint="Email"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:paddingTop="13dp"
-        android:paddingBottom="13dp"
-        android:paddingLeft="30dp"
-        android:textColor="@color/black"
-        android:layout_marginTop="20sp"
-        android:background="@drawable/botron_text"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titlelogin"
-        app:layout_constraintWidth_percent="0.8"/>
+        app:layout_constraintWidth_percent="0.8">
 
-    <EditText
-        android:id="@+id/passLogin"
+        <ImageView
+            android:id="@+id/iconemail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_baseline_email_24" />
+
+        <EditText
+            android:id="@+id/emailLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comfortaa"
+            android:hint="Email"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/iconemail" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linepass"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/comfortaa"
-        android:hint="Mật Khẩu"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:paddingTop="13dp"
-        android:paddingBottom="13dp"
-        android:paddingLeft="30dp"
-        android:textColor="@color/black"
-        android:layout_marginTop="20sp"
-        android:background="@drawable/botron_text"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailLogin"
-        app:layout_constraintWidth_percent="0.8"/>
+        app:layout_constraintTop_toBottomOf="@+id/lineemail"
+        app:layout_constraintWidth_percent="0.8">
+
+        <ImageView
+            android:id="@+id/iconpass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_baseline_vpn_key_24" />
+
+        <EditText
+            android:id="@+id/passLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comfortaa"
+            android:hint="Mật Khẩu"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/lineemail" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/login"
         android:text="Đăng nhập"
-        android:textSize="18sp"
+        android:textSize="15sp"
         android:textStyle="bold"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="100sp"
         android:textColor="@color/black"
         android:fontFamily="@font/comfortaa"
+        android:background="@drawable/botron_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passLogin"
+        app:layout_constraintTop_toBottomOf="@+id/linepass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/textregister"
+        android:text="@string/back_register"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/comfortaa"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageButton
+        android:id="@+id/FacebookLogin"
+        android:src="@mipmap/ic_launcher_logo_facebook_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textregister"
+        android:background="@drawable/botron_button"
+        android:layout_marginTop="20sp"
+        android:layout_marginRight="130sp"
+        android:scaleType="centerCrop"
+        android:layout_width="70dp"
+        android:layout_height="70dp"/>
 
     <ImageButton
         android:id="@+id/GoogleLogin"
         android:src="@mipmap/ic_launcher_logo_google_foreground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login"
+        app:layout_constraintTop_toBottomOf="@+id/textregister"
         android:background="@drawable/botron_button"
-        android:layout_marginTop="30sp"
-        android:layout_marginLeft="180sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginLeft="130sp"
         android:scaleType="centerCrop"
         android:layout_width="70dp"
         android:layout_height="70dp"/>
