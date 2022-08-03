@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".DatSingle">
+
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText2"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="230dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn106"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="106" />
+
+        <Button
+            android:id="@+id/btn107"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="107" />
+
+        <Button
+            android:id="@+id/btn108"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="108" />
+
+        <Button
+            android:id="@+id/btn109"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="109" />
+
+        <Button
+            android:id="@+id/btn110"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="110" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:hint="Nhận phòng" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText1"
+        android:layout_marginLeft="100dp"
+        android:ems="10"
+        android:hint="Trả phòng" />
+
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText2"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn101"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="101" />
+
+        <Button
+            android:id="@+id/btn102"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="102" />
+
+        <Button
+            android:id="@+id/btn103"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="103" />
+
+        <Button
+            android:id="@+id/btn104"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="104" />
+
+        <Button
+            android:id="@+id/btn105"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="105" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnDP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout"
+        android:layout_gravity="center"
+
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="5dp"
+        android:text="Chọn phòng" />
+
+</RelativeLayout>
