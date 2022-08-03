@@ -1,4 +1,4 @@
-package com.example.doanandroid.ui.gallery;
+package com.example.doanandroid.ui.slideshow;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,10 +13,13 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.doanandroid.R;
 
 
-public class ThongTinTaiKhoanFragment extends Fragment {
+public class KhuyenmaiFragment extends Fragment {
 
-    public View onCreateView (@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_thongtin_taikhoan, container, false);
+
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+       View root = inflater.inflate(R.layout.fragment_khuyenmai, container, false);
         return root;
     }
+
 }
