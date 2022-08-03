@@ -40,14 +40,14 @@ public class Phong extends AppCompatActivity {
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent secondActivity = new Intent(Phong.this, SecondActivity.class);
+                Intent secondActivity = new Intent(Phong.this, PhongSingle.class);
                 startActivity(secondActivity);
             }
         });
         cardView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent fourthActivity = new Intent(Phong.this, FourthActivity.class);
+                Intent fourthActivity = new Intent(Phong.this, PhongDouble.class);
                 startActivity(fourthActivity);
             }
         });
