@@ -16,7 +16,7 @@ public class PhongFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-       View root = inflater.inflate(R.layout.fragment_khuyenmai, container, false);
+       View root = inflater.inflate(R.layout.fragment_phong, container, false);
         return root;
     }
 
