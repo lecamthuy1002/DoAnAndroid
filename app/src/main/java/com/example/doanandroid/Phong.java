@@ -21,7 +21,7 @@ public class Phong extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phong);
+        setContentView(R.layout.fragment_phong);
 
         cardView = findViewById(R.id.cardView);
         cardView2 = findViewById(R.id.cardView2);
