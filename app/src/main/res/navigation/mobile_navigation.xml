@@ -25,7 +25,7 @@
 
     <fragment
         android:id="@+id/nav_room"
-        android:name="com.example.doanandroid.Phong"
+        android:name="com.example.doanandroid.ui.room.PhongFragment"
         android:label="@string/menu_room"
         tools:layout="@layout/fragment_phong" />
 </navigation>
