@@ -107,6 +107,7 @@
     </LinearLayout>
 
     <Button
+        android:onClick="mainActivity"
         android:id="@+id/login"
         android:text="Đăng nhập"
         android:textSize="15sp"
