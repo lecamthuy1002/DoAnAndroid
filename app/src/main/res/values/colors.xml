@@ -20,4 +20,8 @@
     <color name="greena">#cbdfbd</color>
     <color name="greenb">#f6f4d2</color>
     <color name="greenc">#d4e09b</color>
+    <color name="colorAccent">#ECC131</color>
+    <color name="colorPrimary">#000000</color>
+    <color name="gray">#a9a9a9</color>
+    <color name="blue">#469FEC</color>
 </resources>
