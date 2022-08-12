@@ -126,14 +126,14 @@ INSERT INTO `taikhoan` (`IDTAIKHOAN`, `HOTEN`, `DIENTHOAI`, `DIACHI`, `EMAIL`, `
 (6, 'Tran Thi Ngoc Hien', '123456268', 'Nha trang', 'hien@gmail.com', 'Nữ', '123456');
 
 INSERT INTO `khachsan` (`MAKHACHSAN` ,`TENKHACHSAN` ,`DIACHI` , `GGMAP` ,`MOTA`,`HANG`, `NGUNGHD`) VALUES
-('A345','Lồng đèn đỏ','60 Hoa Hồng, Phường 7, Phú Nhuận, Thành phố Hồ Chí Minh','https://goo.gl/maps/dUswo6kT5CrWAjTA7','1 nơi tuyệt vời','11','1');
+('345','Lồng đèn đỏ','60 Hoa Hồng, Phường 7, Phú Nhuận, Thành phố Hồ Chí Minh','https://goo.gl/maps/dUswo6kT5CrWAjTA7','1 nơi tuyệt vời','11','1');
 
 INSERT INTO `loaiphong` (`IDLOAIPHONG`, `MAKHACHSAN`, `TENLOAIPHONG`, `MOTA`, `HINHANH`, `GIAPHONG`, `SOLUONG`,`TRANGTHAI`,`NGUNGHD`) VALUES
-(1, 'A345', 'Vip01', 'Đèn led, giường với gối tình yêu', 'https://s3.go2joy.vn/350w/hotel/3370/4479_1640840154_61cd3bdabd187.jpg', '500.000', '3', '0','1'),
-(2, 'A345', 'Vip02', 'Đèn led, giường với gối tình yêu', 'https://s3.go2joy.vn/350w/hotel/3370/4479_1640840154_61cd3bdabd187.jpg', '500.000', '3', '0','1'),
-(3, 'A345', 'Vip03', 'Đèn led, giường với gối tình yêu, bồn tắm, tủ lạnh', 'https://s3.go2joy.vn/350w/hotel/3370/4479_1640840154_61cd3bdabd187.jpg', '600.000', '2', '0','1'),
-(4, 'A345', 'Vip04', 'Đèn led, giường với gối tình yêu, bồn tắm, tủ lạnh, ghế tình yêu', 'https://s3.go2joy.vn/350w/hotel/3370/4479_1640840154_61cd3bdabd187.jpg', '650.000', '2', '0','1'),
-(5, 'A345', 'Vip05', 'Đèn led, giường với gối tình yêu, bồn tắm, tủ lạnh, ghế tình yêu', 'https://s3.go2joy.vn/350w/hotel/3370/4479_1640840154_61cd3bdabd187.jpg', '650.000', '2', '0','1');
+(1, '345', 'Vip01', 'Đèn led, giường với gối tình yêu', 'https://s3.go2joy.vn/350w/hotel/3370/4479_1640840154_61cd3bdabd187.jpg', '500.000', '3', '0','1'),
+(2, '345', 'Vip02', 'Đèn led, giường với gối tình yêu', 'https://s3.go2joy.vn/350w/hotel/3370/4479_1640840154_61cd3bdabd187.jpg', '500.000', '3', '0','1'),
+(3, '345', 'Vip03', 'Đèn led, giường với gối tình yêu, bồn tắm, tủ lạnh', 'https://s3.go2joy.vn/350w/hotel/3370/4479_1640840154_61cd3bdabd187.jpg', '600.000', '2', '0','1'),
+(4, '345', 'Vip04', 'Đèn led, giường với gối tình yêu, bồn tắm, tủ lạnh, ghế tình yêu', 'https://s3.go2joy.vn/350w/hotel/3370/4479_1640840154_61cd3bdabd187.jpg', '650.000', '2', '0','1'),
+(5, '345', 'Vip05', 'Đèn led, giường với gối tình yêu, bồn tắm, tủ lạnh, ghế tình yêu', 'https://s3.go2joy.vn/350w/hotel/3370/4479_1640840154_61cd3bdabd187.jpg', '650.000', '2', '0','1');
 --
 -- Indexes for dumped tables
 --
