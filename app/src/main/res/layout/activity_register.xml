@@ -173,42 +173,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_percent="0.95">
         <TableRow>
+
             <TextView
                 android:id="@+id/Sex1"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/comfortaa"
                 android:layout_weight="1"
+                android:fontFamily="@font/comfortaa"
                 android:text="Giới tính"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <RadioButton
-                android:id="@+id/rbNam"
-                android:fontFamily="@font/comfortaa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/Sex1"
-                android:padding="10dp"
-                android:text="Nam"
-                android:layout_column="2"
-                android:textColorHint="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+            <RadioGroup
+                android:id="@+id/rdroup"
+                android:orientation="vertical">
 
-            <RadioButton
-                android:id="@+id/rbNu"
-                android:fontFamily="@font/comfortaa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="Nữ"
-                app:layout_constraintTop_toBottomOf="@+id/Sex1"
-                android:layout_column="1"
-                android:textColorHint="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/rbNam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:fontFamily="@font/comfortaa"
+                    android:padding="10dp"
+                    android:text="Nam"
+                    android:textColorHint="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/Sex1" />
+
+                <RadioButton
+                    android:id="@+id/rbNu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:fontFamily="@font/comfortaa"
+                    android:padding="10dp"
+                    android:text="Nữ"
+                    android:textColorHint="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/Sex1" />
+            </RadioGroup>
         </TableRow>
     </TableLayout>
     <TableLayout
@@ -222,40 +229,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintWidth_percent="0.95">
-        <TableRow>
-            <TextView
-                android:id="@+id/bob"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/comfortaa"
-                android:hint="Ngày sinh"
-                android:textColorHint="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:paddingLeft="2dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-            <EditText
-                android:id="@+id/textDate"
-                android:hint=""
-                android:textSize="18sp"
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:layout_column="1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-            <Button
-                android:id="@+id/setDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="@+id/bob"
-                android:layout_gravity="end"
-                android:layout_column="2"
-                style="@style/ToggleButtonIcon"
-                android:drawableRight="@drawable/ic_round_calendar_today_24"
-                app:layout_constraintTop_toBottomOf="@+id/bob"/>
-        </TableRow>
+        <TableRow/>
     </TableLayout>
     <TableLayout
         android:id="@+id/tb4"
@@ -284,6 +258,7 @@
                 android:layout_width="290dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/comfortaa"
+                android:inputType="textPassword"
                 android:hint="Nhập mật khẩu"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -293,31 +268,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/titleregister"/>
         </TableRow>
-        <TableRow>
-            <TextView
-                android:id="@+id/confirm_pass1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/comfortaa"
-                android:textColor="@color/black"
-                android:text="Xác nhận"
-                android:layout_weight="1"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
-            <EditText
-                android:id="@+id/confirm_pass"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/comfortaa"
-                android:hint="Nhập lại mật khẩu"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_column="1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/phone" />
-        </TableRow>
+        <TableRow/>
     </TableLayout>
 
     <Button

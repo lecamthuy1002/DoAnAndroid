@@ -60,15 +60,15 @@ public class PhongFragment extends Fragment {
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent secondActivity = new Intent(com.example.doanandroid.Phong.this, PhongSingle.class);
-                    startActivity(secondActivity);
+//                    Intent secondActivity = new Intent(com.example.doanandroid.Phong.this, PhongSingle.class);
+//                    startActivity(secondActivity);
                 }
             });
             cardView2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent fourthActivity = new Intent(com.example.doanandroid.Phong.this, PhongDouble.class);
-                    startActivity(fourthActivity);
+//                    Intent fourthActivity = new Intent(com.example.doanandroid.Phong.this, PhongDouble.class);
+//                    startActivity(fourthActivity);
                 }
             });
             //Hide status bar and navigation bar at the bottom

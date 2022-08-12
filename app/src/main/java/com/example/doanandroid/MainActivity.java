@@ -17,7 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.doanandroid.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
@@ -61,4 +60,5 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
 }

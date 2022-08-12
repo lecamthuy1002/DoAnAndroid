@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/actLogin"
     tools:context=".LoginActivity">
     <ImageView
         android:id="@+id/imageView2"
@@ -99,6 +100,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/comfortaa"
+            android:inputType="textPassword"
             android:hint="Mật Khẩu"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -107,7 +109,6 @@
     </LinearLayout>
 
     <Button
-        android:onClick="mainActivity"
         android:id="@+id/login"
         android:text="Đăng nhập"
         android:textSize="15sp"
