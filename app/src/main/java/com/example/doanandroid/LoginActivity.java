@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }//
-//
+////
     private void login(String email, String password){
         ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this);
         progressDialog.setCancelable(false);
