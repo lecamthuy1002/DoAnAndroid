@@ -11,7 +11,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-public class Phong extends AppCompatActivity {
+public class PhongActivity extends AppCompatActivity {
 
     CardView cardView, cardView2;
     EditText searchView;
