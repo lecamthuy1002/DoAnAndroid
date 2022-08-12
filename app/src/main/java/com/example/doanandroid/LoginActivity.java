@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
                 fragmentTransaction.replace(R.id.actLogin, new HomeFragment()).commit();
             }
         });
-    }
+    }//
 //
     private void login(String email, String password){
         ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this);
