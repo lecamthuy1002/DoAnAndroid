@@ -24,4 +24,5 @@
     <color name="colorPrimary">#000000</color>
     <color name="gray">#a9a9a9</color>
     <color name="blue">#469FEC</color>
+    <color name="colorPrimaryDark">#7B1FA2</color>
 </resources>
