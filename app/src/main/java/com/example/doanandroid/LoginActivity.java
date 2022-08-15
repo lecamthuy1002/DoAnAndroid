@@ -1,14 +1,14 @@
 package com.example.doanandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -19,19 +19,20 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.example.doanandroid.ui.home.HomeFragment;
 
-import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
-    EditText email, password;
-    Button login;
+    private EditText email, password;
+    private Button login;
+    private String txtemail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         email = (EditText)  findViewById(R.id.emailLogin);
         password = (EditText) findViewById(R.id.passLogin);
@@ -39,16 +40,20 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String txtemail = email.getText().toString();
+                txtemail = email.getText().toString().trim();
                 String txtpass = password.getText().toString();
+
                 if(TextUtils.isEmpty(txtemail) || TextUtils.isEmpty(txtemail) || TextUtils.isEmpty(txtpass) ){
                     Toast.makeText(LoginActivity.this, "All fields required", Toast.LENGTH_SHORT).show();
                 }
                 else{
+
                     login(txtemail, txtpass);
+
+                    //context.startActivity(intent);
                 }
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.actLogin, new HomeFragment()).commit();
+
+                //finish();
             }
         });
     }//
@@ -65,7 +70,18 @@ public class LoginActivity extends AppCompatActivity {
                 if(response.equals("Login Success")){
                     progressDialog.dismiss();
                     Toast.makeText(LoginActivity.this, response, Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(LoginActivity.this, HomeFragment.class));
+                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                }
+                else {
+                    progressDialog.dismiss();
+                    Toast.makeText(LoginActivity.this, response, Toast.LENGTH_SHORT).show();
+                    if(response.equals("This Email is not valid")||response.equals("Wrong Password")||response.equals("This Email is not registered")){
+                        Toast.makeText(LoginActivity.this, response, Toast.LENGTH_SHORT).show();
+                    }else {
+                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                        intent.putExtra(DatPhongActivity.NAME, txtemail);
+                        startActivity(intent);
+                    }
                 }
 
             }

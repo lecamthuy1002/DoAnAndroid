@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
-import com.example.doanandroid.ui.home.HomeFragment;
 
 public class WellcomeActivity extends AppCompatActivity {
     Button register, login;
