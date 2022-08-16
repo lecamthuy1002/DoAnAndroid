@@ -81,8 +81,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                     }
                 }
-                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-                finish();
+
             }
         });
     }
@@ -98,12 +97,11 @@ public class RegisterActivity extends AppCompatActivity {
                 if(response.equals("Successfully Register")){
                     progressDialog.dismiss();
                     Toast.makeText(RegisterActivity.this, response, Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-                    finish();
                 }
                 else {
                     progressDialog.dismiss();
                     Toast.makeText(RegisterActivity.this, response, Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                 }
 
             }

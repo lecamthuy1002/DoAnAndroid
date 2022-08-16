@@ -7,10 +7,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,6 +38,7 @@ public class HomeActivity extends AppCompatActivity {
     private TextView email;
     private String txtemail;
     public static String NAME = "NAME";
+
 
     SearchView searchView;
     @Override
@@ -59,7 +64,7 @@ public class HomeActivity extends AppCompatActivity {
         email = findViewById(R.id.tvemail);
         Intent intent = getIntent();
         txtemail = intent.getStringExtra(NAME);
-        //email.setText("hi"+txtemail);
+        email.setText("Hi "+txtemail);
         Hotel hotel = new Hotel();
         hotel.execute();
 
@@ -80,13 +85,13 @@ public class HomeActivity extends AppCompatActivity {
                 String line;
                 while((line = bufferedReader.readLine())!=null){
 
-                    //stringBuffer.append(line);
+
                     mainfile = mainfile + line;
 
                 }
-                //mainfile = stringBuffer.toString();
 
-                //JSONArray parent = new JSONArray(mainfile);
+
+
                 if(!mainfile.isEmpty()){
                     JSONObject jsonObject = new JSONObject(mainfile);
                     JSONArray hotels = jsonObject.getJSONArray("");
@@ -105,16 +110,6 @@ public class HomeActivity extends AppCompatActivity {
                     }
 
                 }
-//                int i = 0;
-//                while (i <= parent.length()){
-//
-//                    JSONObject child = new JSONObject();
-//                    String name = child.getString("ten");
-//                    String img = child.getString("hinhanh");
-////                    String star = child.getString("sao");
-//                    arrayList.add(new KhachSan(name, img));
-//                        i++;
-//                }
 
             } catch (MalformedURLException e) {
                 e.printStackTrace();
@@ -137,12 +132,12 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if(reviewAdapter!=null){
-            reviewAdapter.release();
-        }
-    }
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        if(reviewAdapter!=null){
+//            reviewAdapter.release();
+//        }
+//    }
 }
 

@@ -42,15 +42,17 @@
         app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintTop_toTopOf="parent"/>
 
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="10sp"
-        android:textSize="25dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/be_vietnam_bold"
+        android:textSize="16dp"
         android:id="@+id/tvemail"
-        app:layout_constraintTop_toBottomOf="@+id/search" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTravel" />
 
     <SearchView
         android:id="@+id/search"
@@ -63,7 +65,7 @@
         app:layout_constraintEnd_toStartOf="@id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline"
-        app:layout_constraintTop_toBottomOf="@id/txtTravel"
+        app:layout_constraintTop_toBottomOf="@id/tvemail"
         tools:targetApi="lollipop" />
 
     <ScrollView

@@ -3,115 +3,80 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F8EEEC"
-    tools:context=".DatPhongActivity">
-
+    android:layout_height="match_parent">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/titleregister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:fontFamily="@font/courgette"
-            android:text="Thông Tin Đặt Phòng"
-            android:textAlignment="center"
-            android:textColor="#EE7373"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="400dp"
+        android:background="#80FCF7F7">
 
         <TableLayout
             android:id="@+id/tb1"
             android:layout_width="0dp"
-            android:paddingTop="10dp"
-            android:stretchColumns="1"
-            android:shrinkColumns="0"
             android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:shrinkColumns="0"
+            android:stretchColumns="1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleregister"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="0.95">
+
             <TableRow>
+
                 <TextView
                     android:id="@+id/fullname1"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
-                    android:fontFamily="@font/comfortaa"
-                    android:textColor="@color/black"
-                    android:text="Họ Tên"
                     android:layout_weight="1"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="Họ Tên"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
-                <EditText
-                    android:id="@+id/edname"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/etName"
                     android:layout_width="290dp"
                     android:layout_height="wrap_content"
+                    android:layout_column="1"
                     android:fontFamily="@font/comfortaa"
                     android:hint="Nhập Họ tên"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:layout_column="1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/titleregister"/>
+                    app:layout_constraintTop_toBottomOf="@+id/titleregister" />
             </TableRow>
+
             <TableRow>
-                <TextView
-                    android:id="@+id/email1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="60dp"
-                    android:fontFamily="@font/comfortaa"
-                    android:textColor="@color/black"
-                    android:text="Email"
-                    android:layout_weight="1"
-                    android:textSize="18sp"
-                    android:textStyle="bold"/>
-                <EditText
-                    android:id="@+id/edmail"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/comfortaa"
-                    android:hint="Nhập Email"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_column="1"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/phone" />
-            </TableRow>
-            <TableRow>
+
                 <TextView
                     android:id="@+id/phone1"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
-                    android:fontFamily="@font/comfortaa"
-                    android:textColor="@color/black"
-                    android:text="Điện thoại"
                     android:layout_weight="1"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="Điện thoại"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
-                <EditText
-                    android:id="@+id/edphone"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/etPhone"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_column="1"
                     android:fontFamily="@font/comfortaa"
                     android:hint="Nhập Số điện thoại"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:layout_column="1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/fullname" />
             </TableRow>
+
             <TableRow>
 
                 <TextView
@@ -124,42 +89,17 @@
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
-                <EditText
-                    android:id="@+id/edaddress"
+
+                <TextView
+                    android:id="@+id/etCMND"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_column="1"
                     android:fontFamily="@font/comfortaa"
                     android:hint="Nhập CCCD/CMND"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:layout_column="1"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/DateGroup" />
-
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:id="@+id/tvKhach_san"
-                    android:layout_width="wrap_content"
-                    android:layout_height="60dp"
-                    android:fontFamily="@font/comfortaa"
-                    android:textColor="@color/black"
-                    android:text="Khách sạn"
-                    android:layout_weight="1"
-                    android:textSize="18sp"
-                    android:textStyle="bold"/>
-                <EditText
-                    android:id="@+id/ednamehotel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/comfortaa"
-                    android:text="Tên khách sạn"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_column="1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/DateGroup" />
@@ -167,96 +107,90 @@
             </TableRow>
 
             <TableRow>
+
                 <TextView
                     android:id="@+id/tvSoluong"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
-                    android:fontFamily="@font/comfortaa"
-                    android:textColor="@color/black"
-                    android:text="Số lượng"
                     android:layout_weight="1"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="Số lượng"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
-                <EditText
-                    android:id="@+id/edSoluong"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/etSoLuong"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_column="1"
                     android:fontFamily="@font/comfortaa"
                     android:hint="Số lượng phòng"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:layout_column="1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/DateGroup" />
             </TableRow>
+
             <TableRow>
+
                 <TextView
                     android:id="@+id/tvNgayDat"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
-                    android:fontFamily="@font/comfortaa"
-                    android:textColor="@color/black"
-                    android:text="Ngày đặt"
                     android:layout_weight="1"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="Ngày đặt"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
-                <EditText
-                    android:id="@+id/edNgayDat"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/etNgayDat"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_column="1"
                     android:fontFamily="@font/comfortaa"
-                    android:text="Ngày đặt phòng"
+                    android:hint="Ngày đặt phòng"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:layout_column="1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/DateGroup" />
             </TableRow>
 
             <TableRow>
-            <TextView
-                android:id="@+id/tvNgayNhan"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:fontFamily="@font/comfortaa"
-                android:textColor="@color/black"
-                android:text="Ngày nhận"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
-            <EditText
-                android:id="@+id/edNgaynhan"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/comfortaa"
-                android:hint="Ngày nhận phòng"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_column="1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/DateGroup" />
+
+                <TextView
+                    android:id="@+id/tvNgayNhan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="Ngày nhận"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/etNgaynhan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:fontFamily="@font/comfortaa"
+                    android:hint="Ngày nhận phòng"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/DateGroup" />
             </TableRow>
         </TableLayout>
 
-        <Button
-            android:id="@+id/booking"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Đặt Phòng"
-            android:textColor="#DB2121"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="30dp"
-            app:layout_constraintTop_toBottomOf="@id/tb1"
-            tools:layout_editor_absoluteY="61dp" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </ScrollView>

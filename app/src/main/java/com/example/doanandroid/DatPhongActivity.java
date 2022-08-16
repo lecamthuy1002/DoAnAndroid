@@ -47,10 +47,8 @@ public class DatPhongActivity extends AppCompatActivity {
 //    KhachSan hotels;
 //    EditText name, email, phone, address, hotel, quantity, ngaydat, ngaynhan;
 //    TextView tvName;
-    private TextView email;
-    private String txtemail;
+
     public static String NAME = "NAME";
-    String idUser;
     EditText ten, mail, dienthoai, cmnd, khachsan, soluong, ngaydatphong, ngaynhanphong;
     Button books;
     @Override
@@ -60,10 +58,6 @@ public class DatPhongActivity extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        email = findViewById(R.id.tvemail);
-        Intent intent = getIntent();
-        txtemail = intent.getStringExtra(NAME);
-        //email.setText("hi"+txtemail);
 
         //xử lý sự kiện nút đặt phòng
         ten = (EditText) findViewById(R.id.edname);
@@ -72,7 +66,6 @@ public class DatPhongActivity extends AppCompatActivity {
         cmnd = (EditText) findViewById(R.id.edaddress);
         khachsan = (EditText) findViewById(R.id.ednamehotel);
         soluong = (EditText) findViewById(R.id.edSoluong);
-        mail.setText(txtemail);
 
         ngaydatphong = (EditText) findViewById(R.id.edNgayDat);
         ngaynhanphong = (EditText) findViewById(R.id.edNgaynhan);
@@ -117,7 +110,7 @@ public class DatPhongActivity extends AppCompatActivity {
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                if(response.equals("Successfully Register")){
+                if(response.equals("Sucessfully booking")){
                     progressDialog.dismiss();
                     Toast.makeText(DatPhongActivity.this, response, Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(DatPhongActivity.this, DatPhongActivity.class));
@@ -125,7 +118,8 @@ public class DatPhongActivity extends AppCompatActivity {
                 }
                 else {
                     progressDialog.dismiss();
-                    Toast.makeText(DatPhongActivity.this, response, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DatPhongActivity.this, "Đặt phòng thành công!!!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(DatPhongActivity.this, HomeActivity.class));
                 }
 
             }

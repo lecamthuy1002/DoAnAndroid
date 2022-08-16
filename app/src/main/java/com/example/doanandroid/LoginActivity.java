@@ -47,10 +47,13 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "All fields required", Toast.LENGTH_SHORT).show();
                 }
                 else{
+                    String soSanh = "admin@gmail.com";
+                    if(txtemail.equals(soSanh)){
+                        loginAdmin(txtemail, txtpass);
+                    }else {
+                        login(txtemail, txtpass);
+                    }
 
-                    login(txtemail, txtpass);
-
-                    //context.startActivity(intent);
                 }
 
                 //finish();
@@ -67,6 +70,7 @@ public class LoginActivity extends AppCompatActivity {
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+
                 if(response.equals("Login Success")){
                     progressDialog.dismiss();
                     Toast.makeText(LoginActivity.this, response, Toast.LENGTH_SHORT).show();
@@ -78,8 +82,57 @@ public class LoginActivity extends AppCompatActivity {
                     if(response.equals("This Email is not valid")||response.equals("Wrong Password")||response.equals("This Email is not registered")){
                         Toast.makeText(LoginActivity.this, response, Toast.LENGTH_SHORT).show();
                     }else {
+                        Toast.makeText(LoginActivity.this, response, Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                        intent.putExtra(DatPhongActivity.NAME, txtemail);
+                        intent.putExtra(HomeActivity.NAME, txtemail);
+                        startActivity(intent);
+                    }
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                if (error == null || error.networkResponse == null){
+                    progressDialog.dismiss();
+                    Toast.makeText(LoginActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        }){
+            protected Map<String, String> getParams()throws AuthFailureError {
+                HashMap<String, String> param = new HashMap<>();
+                param.put("email", email);
+                param.put("password", password);
+                return param;
+            }
+        };
+        request.setRetryPolicy(new DefaultRetryPolicy(30000,DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        MySingleton.getmInstance(LoginActivity.this).addToRequestQueue(request);
+    }
+
+    private void loginAdmin(String email, String password){
+        ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this);
+        progressDialog.setCancelable(false);
+        progressDialog.setIndeterminate(false);
+        progressDialog.setTitle("Registering New Account");
+        String url = "http://10.0.2.2:8080/loginregister/login.php";
+        StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                if(response.equals("Login Success")){
+                    progressDialog.dismiss();
+                    Toast.makeText(LoginActivity.this, response, Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                }
+                else {
+                    progressDialog.dismiss();
+                    Toast.makeText(LoginActivity.this, response, Toast.LENGTH_SHORT).show();
+                    if(response.equals("This Email is not valid")||response.equals("Wrong Password")||response.equals("This Email is not registered")){
+                        Toast.makeText(LoginActivity.this, response, Toast.LENGTH_SHORT).show();
+                    }else {
+                        Toast.makeText(LoginActivity.this, response, Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(LoginActivity.this, AdminHomeActivity.class);
                         startActivity(intent);
                     }
                 }

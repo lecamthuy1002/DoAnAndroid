@@ -3,14 +3,14 @@ package com.example.doanandroid;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    private String id;
+    private int id;
     private String name;
     private String email;
     private String phoneNum;
     private String address;
     private String sex;
 
-    public User(String id, String name, String email, String phoneNum, String address, String sex) {
+    public User(int id, String name, String email, String phoneNum, String address, String sex) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -19,11 +19,11 @@ public class User implements Serializable {
         this.sex = sex;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

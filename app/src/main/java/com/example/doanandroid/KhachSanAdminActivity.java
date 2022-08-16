@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.WindowManager;
-import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,39 +21,33 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class ThongTinDatPhongActivity extends AppCompatActivity {
-
-    private RecyclerView rcv;
-    private ThongTinDatPhongAdapter thongTinDatPhongAdapter;
-    ArrayList<DatPhong> arrayList;
-
+public class KhachSanAdminActivity extends AppCompatActivity {
+    private RecyclerView recyclerView;
+    private KhachSanAdapter khachSanAdapter;
+    public ArrayList<KhachSanAdmin> arrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_thong_tin_dat_phong);
-
+        setContentView(R.layout.activity_khach_san_admin);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-        rcv = findViewById(R.id.rcv_infoRoom);
-        rcv.setHasFixedSize(true);
-        thongTinDatPhongAdapter = new ThongTinDatPhongAdapter(this);
+        recyclerView = findViewById(R.id.rcv_adminhotel);
+        recyclerView.setHasFixedSize(true);
+        khachSanAdapter = new KhachSanAdapter(this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
-        rcv.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        arrayList = new ArrayList<KhachSanAdmin>();
+        HolderKhachSan holderKhachSan = new HolderKhachSan();
+        holderKhachSan.execute();
 
-        arrayList = new ArrayList<DatPhong>();
-
-        ThongTinDP thongTinDP = new ThongTinDP();
-        thongTinDP.execute();
     }
-
-    public class ThongTinDP extends AsyncTask<String, String, String> {
+    public class HolderKhachSan extends AsyncTask<String, String, String>{
 
         @Override
         protected String doInBackground(String... strings) {
             HttpURLConnection httpURLConnection = null;
             String mainfile="";
             try {
-                URL url = new URL("https://api.npoint.io/2fa29d70df8562ec02cf");
+                URL url = new URL("https://api.npoint.io/5eb62aa46ffca932003f");
                 httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.connect();
 
@@ -72,14 +65,15 @@ public class ThongTinDatPhongActivity extends AppCompatActivity {
                     arrayList.clear();
                     for (int i=0; i<hotelss.length();i++){
                         JSONObject hotelObj = hotelss.getJSONObject(i);
-                        String id1 = hotelObj.getString("idchitiet");
-                        String ten1 = hotelObj.getString("tenkhachhang");
-                        String cmnd1 = hotelObj.getString("cmnd");
-                        String dienthoai1 = hotelObj.getString("dienthoai");
-                        String soluong1 = hotelObj.getString("soluong");
-                        String ngaydat1 = hotelObj.getString("ngaydat");
-                        String ngaynhan1 = hotelObj.getString("ngaynhan");
-                        arrayList.add(new DatPhong(id1, ten1, cmnd1, dienthoai1, soluong1, ngaydat1, ngaynhan1));
+                        String id = hotelObj.getString("id");
+                        String ten = hotelObj.getString("ten");
+                        String hinh = hotelObj.getString("hinhanh");
+                        String star = hotelObj.getString("sao");
+                        String des = hotelObj.getString("mota");
+                        String price = hotelObj.getString("gia");
+                        String img1 = hotelObj.getString("hinh1");
+                        String img2 = hotelObj.getString("hinh2");
+                        arrayList.add(new KhachSanAdmin(id, ten, hinh, star, des, price, img1, img2));
                     }
 
                 }
@@ -99,9 +93,17 @@ public class ThongTinDatPhongActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
 
             super.onPostExecute(s);
-            ThongTinDatPhongAdapter thongTinDatPhongAdapter = new ThongTinDatPhongAdapter(getApplicationContext(),arrayList);
-            rcv.setAdapter(thongTinDatPhongAdapter);
+            KhachSanAdapter khachSanAdapter = new KhachSanAdapter(getApplicationContext());
+            khachSanAdapter.setData(arrayList);
+            recyclerView.setAdapter(khachSanAdapter);
         }
 
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(khachSanAdapter!=null){
+            khachSanAdapter.release();
+        }
     }
 }
