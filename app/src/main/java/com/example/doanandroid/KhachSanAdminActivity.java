@@ -4,9 +4,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,11 +34,15 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class KhachSanAdminActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private KhachSanAdapter khachSanAdapter;
     public ArrayList<KhachSanAdmin> arrayList;
+    Button btnThem;
+    EditText ten, sosao, hinh, mota, gia, hinh1, hinh2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +56,15 @@ public class KhachSanAdminActivity extends AppCompatActivity {
         arrayList = new ArrayList<KhachSanAdmin>();
         HolderKhachSan holderKhachSan = new HolderKhachSan();
         holderKhachSan.execute();
+        btnThem = findViewById(R.id.btn_themHotel);
+        btnThem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(KhachSanAdminActivity.this, ThemKhachSanActivity.class));
+            }
+        });
+
+
 
     }
     public class HolderKhachSan extends AsyncTask<String, String, String>{
@@ -93,8 +120,7 @@ public class KhachSanAdminActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
 
             super.onPostExecute(s);
-            KhachSanAdapter khachSanAdapter = new KhachSanAdapter(getApplicationContext());
-            khachSanAdapter.setData(arrayList);
+            KhachSanAdapter khachSanAdapter = new KhachSanAdapter(getApplicationContext(),arrayList);
             recyclerView.setAdapter(khachSanAdapter);
         }
 

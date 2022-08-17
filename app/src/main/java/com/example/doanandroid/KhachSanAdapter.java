@@ -51,8 +51,23 @@ public class KhachSanAdapter extends RecyclerView.Adapter<KhachSanHolderAdmin> {
         holder.gia.setText(khachSanAdmin.getPrice());
         holder.hinh1.setText(khachSanAdmin.getImg1());
         holder.hinh2.setText(khachSanAdmin.getImg2());
-
+        
+        holder.relativeLayoutHotel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickGoTo(khachSanAdmin);
+            }
+        });
     }
+
+    private void onClickGoTo(KhachSanAdmin khachSanAdmin) {
+        Intent intent = new Intent(mContext, UpdateKhachSanActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("update_khachsan", khachSanAdmin);
+        intent.putExtras(bundle);
+        mContext.startActivity(intent);
+    }
+
     public void release(){
         mContext=null;
     }

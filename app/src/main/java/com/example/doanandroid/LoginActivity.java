@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "All fields required", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    String soSanh = "admin@gmail.com";
+                    String soSanh = "admin123@gmail.com";
                     if(txtemail.equals(soSanh)){
                         loginAdmin(txtemail, txtpass);
                     }else {

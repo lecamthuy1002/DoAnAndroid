@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="450dp"
-    android:id="@+id/layout_khachsan">
+    android:layout_height="match_parent"
+    tools:context=".UpdateKhachSanActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -38,7 +38,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/idks"
+                    android:id="@+id/idksphong"
                     android:layout_width="290dp"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
@@ -66,7 +66,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/tenks"
+                    android:id="@+id/tenksphong"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
@@ -94,7 +94,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/sosao"
+                    android:id="@+id/sosaophong"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
@@ -122,7 +122,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/hinhanh"
+                    android:id="@+id/hinhanhphong"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
@@ -149,7 +149,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/mota"
+                    android:id="@+id/motaphong"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
@@ -176,7 +176,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/giap"
+                    android:id="@+id/giaphong"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
@@ -203,7 +203,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/hinh1"
+                    android:id="@+id/hinh11"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
@@ -230,7 +230,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/hinh2"
+                    android:id="@+id/hinh22"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
@@ -245,6 +245,18 @@
             </TableRow>
         </TableLayout>
 
+        <Button
+            android:id="@+id/btn_CapNhat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="Cập nhật"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tb1" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</RelativeLayout>
+</ScrollView>

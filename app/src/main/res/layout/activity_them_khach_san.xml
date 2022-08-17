@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="450dp"
-    android:id="@+id/layout_khachsan">
+    android:layout_height="match_parent"
+    tools:context=".ThemKhachSanActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,6 +16,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
+            android:layout_marginTop="20dp"
             android:background="@color/pinkc"
             android:shrinkColumns="0"
             android:stretchColumns="1"
@@ -24,33 +25,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="0.95">
 
-            <TableRow>
-
-                <TextView
-                    android:id="@+id/tvid"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/comfortaa"
-                    android:text="ID"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/idks"
-                    android:layout_width="290dp"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:fontFamily="@font/comfortaa"
-                    android:hint=""
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/titleregister" />
-            </TableRow>
 
             <TableRow>
 
@@ -66,7 +40,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/tenks"
+                    android:id="@+id/tenksthem"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
@@ -94,7 +68,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/sosao"
+                    android:id="@+id/sosaothem"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
@@ -122,7 +96,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/hinhanh"
+                    android:id="@+id/hinhanhthem"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
@@ -149,7 +123,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/mota"
+                    android:id="@+id/motathem"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
@@ -176,7 +150,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/giap"
+                    android:id="@+id/giathem"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
@@ -203,7 +177,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/hinh1"
+                    android:id="@+id/hinh1them"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
@@ -221,7 +195,7 @@
                 <TextView
                     android:id="@+id/tvhinh2"
                     android:layout_width="wrap_content"
-                    android:layout_height="70dp"
+                    android:layout_height="80dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/comfortaa"
                     android:text="Hình ảnh 2"
@@ -230,7 +204,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/hinh2"
+                    android:id="@+id/hinh2them"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
@@ -245,6 +219,18 @@
             </TableRow>
         </TableLayout>
 
+        <Button
+            android:id="@+id/btn_ThemKS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="Thêm"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tb1" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</RelativeLayout>
+</ScrollView>

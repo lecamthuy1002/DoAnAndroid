@@ -17,6 +17,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ThemKhachSanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateKhachSanActivity"
+            android:exported="false" />
+        <activity
             android:name=".KhachSanAdminActivity"
             android:exported="false" />
         <activity

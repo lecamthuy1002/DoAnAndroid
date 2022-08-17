@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RatingBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class KhachSanHolderAdmin extends RecyclerView.ViewHolder {
 
     TextView id, ten, hinhanh, sosao, mota, gia, hinh1, hinh2;
-
+    RelativeLayout relativeLayoutHotel;
 
     public KhachSanHolderAdmin(@NonNull View itemView) {
         super(itemView);
@@ -25,6 +26,6 @@ public class KhachSanHolderAdmin extends RecyclerView.ViewHolder {
         gia = itemView.findViewById(R.id.giap);
         hinh1 = itemView.findViewById(R.id.hinh1);
         hinh2 = itemView.findViewById(R.id.hinh2);
-
+        relativeLayoutHotel = itemView.findViewById(R.id.layout_khachsan);
     }
 }
